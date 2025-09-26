@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | Tip calculator app</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -13,32 +15,102 @@
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
+  <script defer src="main.js"></script>
 </head>
 <body>
+<main>
+  <form id="bill-info">
+    <label for="bill">Bill</label>
+    <input type="number" name="bill" id="bill" min="0">
+    <label for="tip">
+      
+      Select Tip %
+    </label>
+    <select name="tip" id="tip" size="6">
+      <option value="5">
+        
+        5%
+      </option>
+      <option value="10">
+        
+        10%
+      </option>
+      <option value="15">
+        
+        15%
+      </option>
+      <option value="25">
+        
+        25%
+      </option>
+      <option value="50">
+        
+        50%
+      </option>
+      <option>
+        
+        <input type="number" min="0" placeholder="Custom">
+      </option>
+    </select>
+    <label for="numOfPeople">
+      
+      Number of People
+    </label>
+    <input type="number" min="0" name="numOfPeople" id="numOfPeople">
+  </form>
+  <div id="result">
+    <table>
+      <tr>
+        <td>
+          <p>
+            
+            Tip Amount
+          </p><br><p>
+            
+            / person
+          </p>
+        </td>
+        <td>
+          <p id="tip-per-people">300</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>
+            Total
+          </p><br><p>
+            / person
+          </p>
+        </td>
+        
+        <td>
+          <p id="total-per-people">400</p>
+        </td>
+      </tr>
+    </table>
+    <button id="btn-reset">Reset</button>
+  </div>  
+</main>
 
-  Bill
+<form>
+  <label for="myChoice">Chọn hoặc nhập giá trị:</label>
+  <input list="choices" id="myChoice" name="myChoice" placeholder="Chọn hoặc nhập...">
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+  <datalist id="choices">
+    <option value="Option 1">
+    <option value="Option 2">
+    <option value="Option 3">
+    <option value="Option 4">
+    <option value="Option 5">
+  </datalist>
 
-  Number of People
+  <button type="submit">Gửi</button>
+</form>
 
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
   
-  <div class="attribution">
+  <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </div> -->
 </body>
 </html>
