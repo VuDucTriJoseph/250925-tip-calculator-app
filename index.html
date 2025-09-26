@@ -21,7 +21,7 @@
   <img src="./images/logo.svg" alt="logo">
 <main>
   <form id="bill-info">
-    <div>
+    <div class="down-line">
       <label for="bill">Bill</label>
       <input type="number" name="bill" id="bill" min="0">
     </div>
@@ -31,43 +31,47 @@
       </label>
       <input type="number" name="tip" id="tip">
       <div class="options">
-        <div data-value="5">5%</div>
-        <div data-value="10">10%</div>
-        <div data-value="15">15%</div>
-        <div data-value="25">25%</div>
-        <div data-value="50">50%</div>
+        <div data-value="5">
+         <p>
+           5%
+         </p>
+        </div>
+        <div data-value="10">
+          <p>
+            10%
+          </p>
+         </div>
+        <div data-value="15">
+          <p>
+            15%
+          </p>
+         </div>
+        <div data-value="25">
+          <p>
+            
+            25%
+          </p>
+         </div>
+        <div data-value="50">
+          <p>
+            50%
+          </p>
+        </div>
         <div class="custom-input">
           <input type="number" min="0" placeholder="Custom" id="customOption">
         </div>
       </div>
-      <!-- <select name="tip" id="tip" size="5" readonly>
-        <option value="5" selected>
-          5%
-        </option>
-        <option value="10">
-          
-          10%
-        </option>
-        <option value="15">
-          
-          15%
-        </option>
-        <option value="25">
-          
-          25%
-        </option>
-        <option value="50">
-          50%
-        </option>
-      </select> -->
     </div>
-    <div>
+    
+    <div class="down-line">
       <label for="numOfPeople">
         Number of People
       </label>
       <input type="number" min="0" name="numOfPeople" id="numOfPeople">
     </div>
+    
   </form>
+  
   <div id="result">
     <table>
       <tr>

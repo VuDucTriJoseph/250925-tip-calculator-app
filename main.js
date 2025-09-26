@@ -15,6 +15,7 @@ function calBill(bill,tip=0,numOfPeople){
 // 
 billInfo.addEventListener('change',e=>{
     e.preventDefault();
+    console.log("active");
     const formData =Object.fromEntries(new FormData(billInfo));
     console.log(formData);
     if (!formData.numOfPeople || !formData.tip || !formData.numOfPeople  ) return ; // avoid 

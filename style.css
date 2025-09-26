@@ -2,37 +2,84 @@ html, input{
     font-size: 24px;
     font-family: "Space Mono", monospace;
 }
+
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  min-height: 100vh;
+  background-color: hsl(185, 41%, 84%);
+}
+main{
+  background-color: hsl(0, 100%, 100%);
+  padding: 2rem;
+  display: grid;
+  gap: 2rem;
+}
 input{
     text-align: end;
+    background-color: hsl(189, 47%, 97%);
+    /* border: none; */
+    font-weight: 600;
+    
 }
-.custom-select {
-  position: relative;
-  display: inline-block;
-  width: 200px;
+#bill-info{
+  display: grid;
+  gap:  2rem;
 }
-.custom-select input[readonly] {
-  width: 100%;
-  padding: 6px;
-  cursor: pointer;
+.down-line{
+  display: grid;
+  gap: 0.6rem;
+}
+label{
+  font-size: 0.7rem;
+}
+/* .custom-select { */
+  /* position: relative; */
+  /* display: inline-block; */
+  /* width: 200px; */
+/* } */
+#tip {
+  display: none;
+  /* width: 100%; */
+  /* padding: 6px; */
+  /* cursor: pointer; */
 }
 .options {
-  /* display: none; */
-  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  /* position: absolute; */
   width: 100%;
-  border: 1px solid #ccc;
-  background: white;
-  z-index: 10;
+  /* border: 1px solid #ccc; */
+  /* background: white; */
+  /* z-index: 10; */
 }
-.options div {
-  padding: 6px;
+.options div p{
+  background-color: hsl(183, 100%, 15%);
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 5px;
+  border-radius: 6px;
+  font-weight: 600;
+  /* padding: 6px; */
   cursor: pointer;
 }
-.options div:hover {
-  background: #eee;
+.options div p:hover {
+  background: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
 }
 .custom-input {
-  padding: 6px;
+  /* padding: 6px; */
 }
 .custom-input input {
-  width: 100%;
+  /* width: 100%; */
+  border: none;
+  padding: 5px;
+  width: 6rem;
+  border-radius: 6px;
+  
 }
