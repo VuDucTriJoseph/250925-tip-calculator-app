@@ -1,4 +1,38 @@
-html{
+html, input{
     font-size: 24px;
     font-family: "Space Mono", monospace;
+}
+input{
+    text-align: end;
+}
+.custom-select {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+}
+.custom-select input[readonly] {
+  width: 100%;
+  padding: 6px;
+  cursor: pointer;
+}
+.options {
+  /* display: none; */
+  position: absolute;
+  width: 100%;
+  border: 1px solid #ccc;
+  background: white;
+  z-index: 10;
+}
+.options div {
+  padding: 6px;
+  cursor: pointer;
+}
+.options div:hover {
+  background: #eee;
+}
+.custom-input {
+  padding: 6px;
+}
+.custom-input input {
+  width: 100%;
 }

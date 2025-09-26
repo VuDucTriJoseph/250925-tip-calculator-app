@@ -11,52 +11,62 @@
   <title>Frontend Mentor | Tip calculator app</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
+  <!-- <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  </style> -->
   <script defer src="main.js"></script>
 </head>
 <body>
+  <img src="./images/logo.svg" alt="logo">
 <main>
   <form id="bill-info">
-    <label for="bill">Bill</label>
-    <input type="number" name="bill" id="bill" min="0">
-    <label for="tip">
-      
-      Select Tip %
-    </label>
-    <select name="tip" id="tip" size="6">
-      <option value="5">
-        
-        5%
-      </option>
-      <option value="10">
-        
-        10%
-      </option>
-      <option value="15">
-        
-        15%
-      </option>
-      <option value="25">
-        
-        25%
-      </option>
-      <option value="50">
-        
-        50%
-      </option>
-      <option>
-        
-        <input type="number" min="0" placeholder="Custom">
-      </option>
-    </select>
-    <label for="numOfPeople">
-      
-      Number of People
-    </label>
-    <input type="number" min="0" name="numOfPeople" id="numOfPeople">
+    <div>
+      <label for="bill">Bill</label>
+      <input type="number" name="bill" id="bill" min="0">
+    </div>
+    <div class="custom-select">
+      <label for="tip">
+        Select Tip %
+      </label>
+      <input type="number" name="tip" id="tip">
+      <div class="options">
+        <div data-value="5">5%</div>
+        <div data-value="10">10%</div>
+        <div data-value="15">15%</div>
+        <div data-value="25">25%</div>
+        <div data-value="50">50%</div>
+        <div class="custom-input">
+          <input type="number" min="0" placeholder="Custom" id="customOption">
+        </div>
+      </div>
+      <!-- <select name="tip" id="tip" size="5" readonly>
+        <option value="5" selected>
+          5%
+        </option>
+        <option value="10">
+          
+          10%
+        </option>
+        <option value="15">
+          
+          15%
+        </option>
+        <option value="25">
+          
+          25%
+        </option>
+        <option value="50">
+          50%
+        </option>
+      </select> -->
+    </div>
+    <div>
+      <label for="numOfPeople">
+        Number of People
+      </label>
+      <input type="number" min="0" name="numOfPeople" id="numOfPeople">
+    </div>
   </form>
   <div id="result">
     <table>
@@ -71,7 +81,7 @@
           </p>
         </td>
         <td>
-          <p id="tip-per-people">300</p>
+          <p id="tip-per-people">$ 0</p>
         </td>
       </tr>
       <tr>
@@ -84,7 +94,7 @@
         </td>
         
         <td>
-          <p id="total-per-people">400</p>
+          <p id="total-per-people">$ 0</p>
         </td>
       </tr>
     </table>
@@ -92,22 +102,32 @@
   </div>  
 </main>
 
-<form>
-  <label for="myChoice">Chọn hoặc nhập giá trị:</label>
-  <input list="choices" id="myChoice" name="myChoice" placeholder="Chọn hoặc nhập...">
 
-  <datalist id="choices">
-    <option value="Option 1">
-    <option value="Option 2">
-    <option value="Option 3">
-    <option value="Option 4">
-    <option value="Option 5">
-  </datalist>
 
-  <button type="submit">Gửi</button>
-</form>
+<script>
+const selectBox = document.querySelector('.custom-select');
+const inputDisplay = document.getElementById('tip');
+const optionsBox = selectBox.querySelector('.options');
+const optionItems = optionsBox.querySelectorAll('div[data-value]');
+const customInput = document.getElementById('customOption');
 
-  
+
+
+// Chọn option thường
+optionItems.forEach(opt => {
+  opt.addEventListener('click', () => {
+    inputDisplay.value = opt.dataset.value;
+    // inputDisplay.dataset.value = opt.dataset.value;
+    // optionsBox.style.display = 'none';
+  });
+});
+
+// Nhập custom
+customInput.addEventListener('input', () => {
+  inputDisplay.value = customInput.value;
+  // inputDisplay.dataset.value = customInput.value;
+});
+</script>
   <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
