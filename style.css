@@ -14,9 +14,10 @@ body{
 }
 main{
   background-color: hsl(0, 100%, 100%);
-  padding: 2rem;
+  padding: 1.5rem;
+  
   display: grid;
-  gap: 2rem;
+  gap: 1.5rem;
   border-radius: 1rem;
 }
 svg{
@@ -27,26 +28,46 @@ svg{
   display: inline-block;
 }
 input{
+    padding: 5px;
     text-align: end;
     background-color: hsl(189, 47%, 97%);
     /* border: none; */
     font-weight: 600;
-    border: none;
-    
+    border: solid 2px white;
+    color: hsl(183, 100%, 15%);
+    border-radius: 5px;
+}
+input:hover{
+  cursor: pointer;
+  border: solid 2px hsl(172, 81%, 65%);
+  /* border-radius: 5px; */
+}
+input:focus{
+  border: solid 2px hsl(172, 81%, 65%);
+  outline: none;
+  
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 3px;
 }
 /* input:not([type='checkbox']) {    
     visibility: hidden;
 } */
 #bill-info{
   display: grid;
-  gap:  2rem;
+  gap:  1.5rem;
 }
 .down-line{
   display: grid;
   gap: 0.6rem;
 }
 label{
-  font-size: 0.7rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: hsl(186, 14%, 43%);
+  
 }
 /* .custom-select { */
   /* position: relative; */
@@ -81,15 +102,17 @@ label{
   cursor: pointer;
 }
 .options div p:hover {
+  background: hsl(172, 81%, 65%);
+  color: hsl(183, 100%, 15%);
+}
+.chosen{
   background: hsl(172, 67%, 45%);
   color: hsl(183, 100%, 15%);
 }
-.custom-input {
-  /* padding: 6px; */
-}
+
 .custom-input input {
   /* width: 100%; */
-  border: none;
+  /* border: none; */
   padding: 5px;
   width: 6rem;
   border-radius: 6px;
@@ -109,10 +132,34 @@ label{
   font-weight: 600;
   color: hsl(183, 100%, 15%);
   background-color: hsl(172, 67%, 45%);
+  padding: 0.4rem;
+
 }
 #btn-reset:hover{
   cursor: pointer;
+  background-color: hsl(172, 81%, 65%);
 }
 table{
   width: 100%;
+}
+table p{
+  margin: 0 6px;
+}
+.up{
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 600;
+}
+.down{
+  color: hsl(184, 14%, 56%);
+  font-size: 0.5rem;
+  font-weight: 600;
+  
+}
+.num{
+  color: hsl(172, 67%, 45%);
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-align: end;
+  margin: 0.5rem;
 }

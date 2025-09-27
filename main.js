@@ -22,15 +22,15 @@ billInfo.addEventListener('change',e=>{
     
     const result = calBill(formData.bill,formData.tip,formData.numOfPeople)
     console.log(result)
-    tipPerPeople.innerText = `$ ${result[0].toFixed(2)}`;
-    totalPerPeople.innerText = `$ ${result[1].toFixed(2)}`;
+    tipPerPeople.innerText = `$${result[0].toFixed(2)}`;
+    totalPerPeople.innerText = `$${result[1].toFixed(2)}`;
 });
 
 // reset
 
 resetBtn.addEventListener('click',e=>{
     billInfo.reset();
-    tipPerPeople.innerText = "$";
-    totalPerPeople.innerText = "$";
+    tipPerPeople.innerText = "$0.00";
+    totalPerPeople.innerText = "$0.00";
 })
 
