@@ -17,14 +17,26 @@ main{
   padding: 2rem;
   display: grid;
   gap: 2rem;
+  border-radius: 1rem;
+}
+svg{
+  position: absolute;
+  top: 30%;
+  left: 0.5rem;
+  z-index: 10;
+  display: inline-block;
 }
 input{
     text-align: end;
     background-color: hsl(189, 47%, 97%);
     /* border: none; */
     font-weight: 600;
+    border: none;
     
 }
+/* input:not([type='checkbox']) {    
+    visibility: hidden;
+} */
 #bill-info{
   display: grid;
   gap:  2rem;
@@ -82,4 +94,25 @@ label{
   width: 6rem;
   border-radius: 6px;
   
+}
+#result{
+  background-color: hsl(183, 100%, 15%);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+#btn-reset{
+  width: 100%;
+  font-size: 20px;
+  font-family: "Space Mono", monospace;
+  border-radius: 0.2rem;
+  border: none;
+  font-weight: 600;
+  color: hsl(183, 100%, 15%);
+  background-color: hsl(172, 67%, 45%);
+}
+#btn-reset:hover{
+  cursor: pointer;
+}
+table{
+  width: 100%;
 }
