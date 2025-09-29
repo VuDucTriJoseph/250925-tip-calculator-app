@@ -36,6 +36,7 @@ input{
     border: solid 2px white;
     color: hsl(183, 100%, 15%);
     border-radius: 5px;
+    width: 100%;
 }
 input:hover{
   cursor: pointer;
@@ -64,6 +65,7 @@ input[type=number]::-webkit-outer-spin-button {
   gap: 0.6rem;
 }
 label{
+  padding: 5px;
   font-size: 0.65rem;
   font-weight: 600;
   color: hsl(186, 14%, 43%);
@@ -90,7 +92,7 @@ label{
   /* background: white; */
   /* z-index: 10; */
 }
-.options div p{
+.options p{
   background-color: hsl(183, 100%, 15%);
   color: white;
   text-align: center;
@@ -101,16 +103,16 @@ label{
   /* padding: 6px; */
   cursor: pointer;
 }
-.options div p:hover {
+.options p:hover {
   background: hsl(172, 81%, 65%);
   color: hsl(183, 100%, 15%);
 }
 .chosen{
-  background: hsl(172, 67%, 45%);
-  color: hsl(183, 100%, 15%);
+  background-color: hsl(172, 67%, 45%) !important;
+  color: hsl(183, 100%, 15%) !important;
 }
 
-.custom-input input {
+.custom-input{
   /* width: 100%; */
   /* border: none; */
   padding: 5px;
@@ -118,7 +120,28 @@ label{
   border-radius: 6px;
   
 }
+.with-arlet{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.arlet{
+  color: red;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 5px;
+  margin: 0;
+}
+.input-arlet{
+  border-color: red;
+}
+.hid{
+  display: none;
+}
 #result{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: hsl(183, 100%, 15%);
   padding: 1rem;
   border-radius: 0.5rem;
@@ -162,4 +185,15 @@ table p{
   font-size: 1.5rem;
   text-align: end;
   margin: 0.5rem;
+}
+@media (min-width:900px){
+  main{
+    grid-template-columns: 1fr 1fr;
+  }
+  .options{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .custom-input{
+    width: 4.5rem;
+  }
 }
