@@ -2,7 +2,7 @@ const billInfo = document.getElementById("bill-info")
 const tipPerPeople = document.getElementById("tip-per-people");
 const totalPerPeople = document.getElementById("total-per-people");
 const resetBtn = document.getElementById("btn-reset");
-const arletMes = document.getElementsByClassName("arlet");
+const arletMes = document.getElementById("arlet");
 const numOfPeople = document.getElementById("numOfPeople");
 
 const selectBox = document.querySelector('.custom-select');
@@ -28,16 +28,17 @@ billInfo.addEventListener('change',e=>{
     console.log(formData);
     
     // avoid missing data
-    if (!formData.numOfPeople || !formData.tip || !formData.numOfPeople  ) return ; 
+    if (!formData.numOfPeople || !formData.tip ) return ; 
     
     arletMes.classList.add('hid');
     numOfPeople.classList.remove("input-arlet");
     
-    if(formData.numOfPeople < 1) {
+    if(formData.numOfPeople < 1 || !formData.numOfPeople ) {
     arletMes.classList.remove('hid');
     numOfPeople.classList.add("input-arlet");
+    return ;
     };
-    
+    resetBtn.disabled = false;
     // caculate data
     const result = calBill(formData.bill,formData.tip,formData.numOfPeople)
     
@@ -50,12 +51,13 @@ billInfo.addEventListener('change',e=>{
 
 // reset-button control
 
-resetBtn.addEventListener('click',e=>{
+resetBtn.addEventListener('click',()=>{
     billInfo.reset();
     tipPerPeople.innerText = "$0.00";
     totalPerPeople.innerText = "$0.00";
     optionsBox.querySelector(".chosen")?.classList.remove("chosen");
-})
+    resetBtn.disabled = true;
+});
 
 // control fake tip component
 

@@ -125,7 +125,7 @@ label{
   justify-content: space-between;
   align-items: center;
 }
-.arlet{
+#arlet{
   color: red;
   font-size: 0.65rem;
   font-weight: 600;
@@ -161,6 +161,9 @@ label{
 #btn-reset:hover{
   cursor: pointer;
   background-color: hsl(172, 81%, 65%);
+}
+#btn-reset:disabled{
+  background-color: hsl(183, 98%, 21%);
 }
 table{
   width: 100%;
